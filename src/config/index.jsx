@@ -1,10 +1,13 @@
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-// import ScrollToTop from "../../components/Scroll/index";
 import Home from "../pages/home";
-import Login from "../pages/auth/login";
-import Register from "../pages/auth/register";
-import Forgot from "../pages/auth/forgot";
+import RegisterSeller from "../pages/auth/RegisterSeller";
+import Forgot from "../pages/auth/ForgotPassword";
+import LoginCustomer from "../pages/auth/LoginCustomer";
+import LoginSeller from "../pages/auth/LoginSeller";
+import RegisterCustomer from "../pages/auth/RegisterCustomer";
+import Cart from "../pages/cart";
+import DetailProduct from "../pages/detailProduct";
 // import DetailProduct from "../../pages/detailProduct/[id]";
 // import Cart from "../../pages/cart/[id]";
 // import Profile from "../../pages/profile/[id]";
@@ -29,13 +32,17 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<Navigate to={"/home"} replace="true" />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/auth/login" element={<Login />} />
-          <Route path="/auth/register" element={<Register />} />
+          <Route path="/auth/LoginCustomer" element={<LoginCustomer />} />
+          <Route path="/auth/LoginSeller" element={<LoginSeller />} />
+          <Route path="/auth/RegisterCustomer" element={<RegisterCustomer />} />
+          <Route path="/auth/RegisterSeller" element={<RegisterSeller />} />
           <Route path="/auth/forgot" element={<Forgot />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/detailProduct/:id" element={<DetailProduct />} />
           {/* <Route path="/product/:id" element={<DetailProduct />} />
           <Route path="/category/:id" element={<CategoryProduct />} />
           <Route path="/newproduct/" element={<NewProduct />} />
-          <Route path="/cart/:id" element={<Cart />} />
+          
           <Route path="/transaction/:id" element={<Transaction />} />
           <Route path="/profile/:id" element={<Profile />} /> */}
           {/* seller */}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../../assets/css/stylebaru.css";
 import logo from "../../../assets/icon.png";
 
-const Login = () => {
+const LoginCustomer = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,9 +20,11 @@ const Login = () => {
               </button>
             </li>
             <li className="nav-item" role="presentation">
-              <button className="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                Seller
-              </button>
+              <Link to="/auth/LoginSeller">
+                <button className="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                  Seller
+                </button>
+              </Link>
             </li>
           </ul>
           {/* Seller */}
@@ -48,13 +50,13 @@ const Login = () => {
               </form>
               <h6 className="text-regis">
                 Don't have a shop.id account?
-                <Link style={{ textDecoration: "none" }} to="/auth/register">
+                <Link style={{ textDecoration: "none" }} to="/auth/RegisterCustomer">
                   Register
                 </Link>
               </h6>
             </div>
             {/* customer */}
-            <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            {/* <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
               <form>
                 <div className="form-group">
                   <input name="email" className="form-control" placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -66,7 +68,7 @@ const Login = () => {
                   <Link to="/auth/forgot">
                     <h6 className="link float-right py-3 ">Forgot password?</h6>
                   </Link>
-                  {/* onClick={handleSellerLogin} */}
+                  
                   <Link to="../home">
                     <button type="button" className="btn btn-block rounded-pill">
                       <h6 className="login">LOGIN</h6>
@@ -80,7 +82,7 @@ const Login = () => {
                   Register
                 </Link>
               </h6>
-            </div>
+            </div> */}
           </div>
         </div>
       </main>
@@ -88,4 +90,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginCustomer;

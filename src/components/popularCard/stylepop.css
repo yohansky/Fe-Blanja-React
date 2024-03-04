@@ -1,0 +1,29 @@
+#popular {
+  padding: 50px;
+}
+
+#popular .card {
+  margin-top: 20px;
+  width: 200px;
+  height: 275px;
+  background: #ffffff;
+  box-shadow: 0px 0px 14px rgba(173, 173, 173, 0.25);
+  border-radius: 8px;
+}
+
+#popular .card-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+}
+
+#popular .card-body p {
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: #db3022;
+}

@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../../../components/navbar";
 
-const Register = () => {
+const RegisterCustomer = () => {
   return (
     <div>
       <Navbar />
-      Halo ini Register
+      Halo ini Register Customer
     </div>
   );
 };
 
-export default Register;
+export default RegisterCustomer;

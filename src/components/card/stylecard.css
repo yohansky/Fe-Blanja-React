@@ -1,0 +1,21 @@
+.product {
+  height: 340px;
+}
+.cardWrap {
+  width: 222px;
+}
+
+@media (max-width: 767px) {
+  .product {
+    height: 100%;
+  }
+  .cardWrap {
+    width: 100%;
+  }
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: #db3022;
+}
