@@ -1,8 +1,15 @@
+@import url("https://fonts.cdnfonts.com/css/metropolis-2");
+
 /* ============== Navbar=========== */
 #navbar .navbar {
   width: 100%;
   background-color: white;
   box-shadow: 0px 6px 40px 0px #adadad40;
+  height: 100px;
+}
+
+#navbar .navbar-brand {
+  margin-right: 60px;
 }
 
 #navbar .search {
@@ -339,6 +346,25 @@
   margin-right: 10px;
   width: 80px;
   transition: background-color 0.3s, border-color 0.3s;
+}
+
+#product .colorBtn {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  height: 46px;
+  width: 44px;
+}
+#product .colorBtn:hover {
+  border: 1px solid #db3022;
+  border-radius: 50%;
+}
+
+.colorBlack {
+  margin: -2px;
+  width: 36px;
+  height: 36px;
+  background-color: black;
+  border-radius: 50%;
 }
 
 #product .wrapSize {

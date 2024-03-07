@@ -1,14 +1,36 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../../../assets/css/stylebaru.css";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/icon.png";
 
 const LoginSeller = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
+  const navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setToken("token saya");
+    // Simulasi autentikasi, ganti ini dengan logika autentikasi yang sesungguhnya
+    // const isAuthenticated = true;
+    // if (isAuthenticated) {
+    // Simpan token ke local storage
+    localStorage.setItem("token", Date.now());
+    // Arahkan pengguna ke halaman beranda
+    navigate("/home");
+    // } else {
+    // Handle autentikasi gagal
+    // }
+  }
+
+  useEffect(() => {
+    if (token) {
+      navigate("/home");
+    }
+  }, [token]);
 
   return (
-    <div>
+    <>
       <main id="login">
         <div className="container">
           <img src={logo} alt="logo" />
@@ -30,7 +52,7 @@ const LoginSeller = () => {
           {/* Seller */}
           <div className="tab-content mt-4" id="pills-tabContent">
             <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <input className="form-control" placeholder="Email" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
@@ -41,11 +63,10 @@ const LoginSeller = () => {
                   <Link to="/auth/forgot">
                     <h6 className="link float-right py-3 ">Forgot password?</h6>
                   </Link>
-                  <Link to="../home">
-                    <button type="button" className="btn btn-block rounded-pill">
-                      <h6 className="login">LOGIN</h6>
-                    </button>
-                  </Link>
+
+                  <button type="submit" className="btn btn-block rounded-pill">
+                    <h6 className="login">LOGIN</h6>
+                  </button>
                 </div>
               </form>
               <h6 className="text-regis">
@@ -55,38 +76,10 @@ const LoginSeller = () => {
                 </Link>
               </h6>
             </div>
-            {/* customer */}
-            {/* <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-              <form>
-                <div className="form-group">
-                  <input name="email" className="form-control" placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div className="form-group">
-                  <input name="password" className="form-control" placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <div className="form-group">
-                  <Link to="/auth/forgot">
-                    <h6 className="link float-right py-3 ">Forgot password?</h6>
-                  </Link>
-        
-                  <Link to="../home">
-                    <button type="button" className="btn btn-block rounded-pill">
-                      <h6 className="login">LOGIN</h6>
-                    </button>
-                  </Link>
-                </div>
-              </form>
-              <h6 className="text-regis">
-                Don't have a shop.id account?
-                <Link style={{ textDecoration: "none" }} to="/auth/register">
-                  Register
-                </Link>
-              </h6>
-            </div> */}
           </div>
         </div>
       </main>
-    </div>
+    </>
   );
 };
 

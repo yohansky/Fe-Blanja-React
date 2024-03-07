@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Carousel } from "react-bootstrap";
-import "./stylecate.css";
+import { Carousel } from "react-responsive-carousel";
+// import "./stylecate.css";
 
 const CategoryComp = () => {
-  const [dataCategory, setDataCategory] = useState([]);
+  // const [dataCategory, setDataCategory] = useState([]);
 
-  const itemsPerGroup = 5;
-  const groupedData = [];
-  for (let i = 0; i < dataCategory.length; i += itemsPerGroup) {
-    groupedData.push(dataCategory.slice(i, i + itemsPerGroup));
-  }
+  // const itemsPerGroup = 5;
+  // const groupedData = [];
+  // for (let i = 0; i < dataCategory.length; i += itemsPerGroup) {
+  //   groupedData.push(dataCategory.slice(i, i + itemsPerGroup));
+  // }
 
   return (
     <div className="container">
@@ -17,7 +17,10 @@ const CategoryComp = () => {
         <h1 style={{ fontWeight: "bold" }}>Category</h1>
         <section style={{ color: "#9B9B9B" }}>What are you currently looking for</section>
       </div>
-      <div className="row">
+      <Carousel controls={false} interval={3000}>
+        <div className="row"></div>
+      </Carousel>
+      {/* <div className="row">
         <div className="col-lg-3 col-md-4 col-sm-6 col-6 mb-4" style={{ width: 222 }}>
           <div className="border rounded product">
             <Carousel data-bs-theme="dark">
@@ -45,7 +48,7 @@ const CategoryComp = () => {
             </Carousel>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

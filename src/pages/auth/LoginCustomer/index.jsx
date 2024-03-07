@@ -1,11 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../assets/css/stylebaru.css";
+// import "../../../assets/css/style.css";
 import logo from "../../../assets/icon.png";
 
 const LoginCustomer = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
+  const navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setToken("token saya");
+    localStorage.setItem("token", Date.now());
+    navigate("/home");
+  }
+
+  useEffect(() => {
+    if (token) navigate("/home");
+  }, [token]);
 
   return (
     <div>

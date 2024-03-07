@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./stylecard.css";
-import Skeleton from "react-loading-skeleton";
 
 const Card = () => {
   //   const navigate = useNavigate();
