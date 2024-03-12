@@ -1,17 +1,78 @@
 import React from "react";
 import NavbarLogin from "../../components/navbarLogin";
-import "../../assets/css/style.css";
+// import "../../assets/css/style.css";
+import { Form } from "react-bootstrap";
 
 const Cart = () => {
   return (
     <>
       <NavbarLogin />
-      Halo ini adalah cart
-      <div className="container">
+      <div className="container mt-3">
+        <h2>My bag</h2>
+        <div className="row">
+          <div className="col-8">
+            items
+            <div className="card rounded mt-3" style={{ width: "720px" }}>
+              <div className="row">
+                <div className="col-10">
+                  <Form.Group className="mt-3 ml-3">
+                    {["checkbox"].map((type) => (
+                      <div key={`inline-${type}`} className="mb-3">
+                        <Form.Check inline label="Select all items" name="group1" type={type} id={`inline-${type}-1`} />
+                      </div>
+                    ))}
+                  </Form.Group>
+                </div>
+                <div className="col-2">
+                  <a href="" className="text-danger">
+                    <div className="mt-3 ml-3">Delete</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="card rounded mt-3" style={{ width: "720px", height: "126px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div className="row">
+                <div className="col">
+                  <form>
+                    <input className="form-check-input ml-3 " type="checkbox" />
+                    {/* <Form.Group className="mt-5 ml-3">
+                      {["checkbox"].map((type) => (
+                        <div key={`inline-${type}`} className="mb-3">
+                          <Form.Check inline label="" name="group2" type={type} id={`inline-${type}-1`} />
+                        </div>
+                      ))}
+                    </Form.Group> */}
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-4">
+            summary
+            <div className="card rounded mt-3" style={{ width: "370px", height: "180px" }}>
+              <div className="m-3">
+                <h5>Shopping summary</h5>
+                <div className="d-flex justify-content-between mt-4">
+                  <h6 className="text-secondary">Total price</h6>
+                  <h5>$ 40.0</h5>
+                </div>
+                <div className="mt-4 d-flex justify-content-center">
+                  <button className="btn btn-danger btn-full" style={{ width: "322px" }}>
+                    Primary
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Backup */}
+      {/* <div className="container mt-3">
         <h2>My bag</h2>
         <div className="row">
           <div className="col-lg-8">
-            {/* select all items */}
+
             <div className="selectall-card">
               <div className="d-flex justify-content-between">
                 <div className="input-group">
@@ -26,7 +87,7 @@ const Cart = () => {
                 </a>
               </div>
             </div>
-            {/* Product list */}
+
             <div className="card mt-3">
               <div className="card-body d-flex align-items-center justify-content-between flex-lg-row flex-sm-row flex-column">
                 <div className="product-bag d-flex align-items-center">
@@ -37,7 +98,7 @@ const Cart = () => {
                     <p>Zalora cloth</p>
                   </div>
                 </div>
-                {/* Harga */}
+  
                 <div className="amount">
                   <img src="../assets/img/ic-minus-baru.svg" alt="min" />
                   <span>1</span>
@@ -72,14 +133,14 @@ const Cart = () => {
           </div>
 
           <div className="col-lg-4">
-            {/* summary */}
+   
             <div className="summary-card">
               <div className="flex-column">
                 <h4>Shopping Summary</h4>
-                {/* <!-- koreksi --> */}
+           
                 <br />
                 <div className="d-flex justify-content-between">
-                  {/* <!-- untuk memberikan baris baru --> */}
+             
                   <div className="name">
                     <p style={{ color: "gray" }}>Total Price</p>
                   </div>
@@ -97,9 +158,9 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          {/*  */}
+   
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
-// import "./stylecate.css";
+import "./stylecate.css";
 
 const CategoryComp = () => {
   // const [dataCategory, setDataCategory] = useState([]);
@@ -12,15 +12,25 @@ const CategoryComp = () => {
   // }
 
   return (
-    <div className="container">
-      <div className="title" style={{ marginTop: 30, marginBottom: 30 }}>
-        <h1 style={{ fontWeight: "bold" }}>Category</h1>
-        <section style={{ color: "#9B9B9B" }}>What are you currently looking for</section>
-      </div>
-      <Carousel controls={false} interval={3000}>
-        <div className="row"></div>
-      </Carousel>
-      {/* <div className="row">
+    <>
+      <main id="category">
+        {/* <div className="container"> */}
+        <div className="title" style={{ marginTop: 30, marginBottom: 30 }}>
+          <h1 style={{ fontWeight: "bold" }}>Category</h1>
+          <section style={{ color: "#9B9B9B" }}>What are you currently looking for</section>
+        </div>
+        <div className="card">
+          <div className="card-body">
+            <div className="row m-1">
+              {/* <div className="col-12"> */}
+              <img className="img" src={require("../../assets/img/Group 1233.png")} alt="First slide" />
+              <img className="img" src={require("../../assets/img/Group 1232.png")} alt="Second slide" />
+              <img className="img" src={require("../../assets/img/Group 1231.png")} alt="Third slide" />
+              {/* </div> */}
+            </div>
+          </div>
+        </div>
+        {/* <div className="row">
         <div className="col-lg-3 col-md-4 col-sm-6 col-6 mb-4" style={{ width: 222 }}>
           <div className="border rounded product">
             <Carousel data-bs-theme="dark">
@@ -49,7 +59,9 @@ const CategoryComp = () => {
           </div>
         </div>
       </div> */}
-    </div>
+        {/* </div> */}
+      </main>
+    </>
   );
 };
 

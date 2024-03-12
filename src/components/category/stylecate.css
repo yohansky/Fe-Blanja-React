@@ -1,19 +1,19 @@
-.row {
+#category .row {
   justify-content: space-between;
 }
 .img {
   width: 206px;
   height: 220;
 }
-.row .colom {
+#category .row .colom {
   width: 206px;
 }
 
 @media screen and (max-width: 499px) {
-  .row {
+  #category .row {
     justify-content: unset;
   }
-  .row .colom {
+  #category .row .colom {
     width: 50%;
   }
   .img {

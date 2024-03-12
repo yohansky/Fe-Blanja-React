@@ -1,17 +1,18 @@
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Home from "../pages/home";
-import RegisterSeller from "../pages/auth/RegisterSeller";
-import Forgot from "../pages/auth/ForgotPassword";
-import LoginCustomer from "../pages/auth/LoginCustomer";
-import LoginSeller from "../pages/auth/LoginSeller";
-import RegisterCustomer from "../pages/auth/RegisterCustomer";
-import Cart from "../pages/cart";
-import DetailProduct from "../pages/detailProduct";
-import Page404 from "../pages/page404";
-import Seller from "../pages/profile/seller";
-import Customer from "../pages/profile/customer";
-import ReqAuth from "../components/reqauth";
+import Home from "../../pages/home";
+import RegisterSeller from "../../pages/auth/RegisterSeller";
+import Forgot from "../../pages/auth/ForgotPassword";
+import LoginCustomer from "../../pages/auth/LoginCustomer";
+import LoginSeller from "../../pages/auth/LoginSeller";
+import RegisterCustomer from "../../pages/auth/RegisterCustomer";
+import Cart from "../../pages/cart";
+import DetailProduct from "../../pages/detailProduct";
+import Page404 from "../../pages/page404";
+import Seller from "../../pages/profile/seller";
+import Customer from "../../pages/profile/customer";
+import ReqAuth from "../../components/reqauth";
+import SellingProduct from "../../pages/profile/seller/sellingProduct";
 // import DetailProduct from "../../pages/detailProduct/[id]";
 // import Cart from "../../pages/cart/[id]";
 // import Profile from "../../pages/profile/[id]";
@@ -60,9 +61,9 @@ const Router = () => {
           {/* seller */}
           <Route path="/profile/seller/" element={<Seller />} />
           {/* <Route path="/profile/my-product/:id" element={<MyProductSeller />} />
-          <Route path="/profile/update-product/:id" element={<EditProduct />} />
-          <Route path="/profile/selling-product" element={<SellingProduct />} />
-          <Route path="/profile/order-cancel/:id" element={<OrderCancel />} />
+          <Route path="/profile/update-product/:id" element={<EditProduct />} /> */}
+          <Route path="/profile/sellingProduct" element={<SellingProduct />} />
+          {/* <Route path="/profile/order-cancel/:id" element={<OrderCancel />} />
           <Route path="/profile/my-order/:id" element={<MyOrder />} />
           <Route path="/profile/edit-seller/:id" element={<EditSeller />} /> */}
           {/* custommer */}
