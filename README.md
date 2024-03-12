@@ -2,6 +2,8 @@
 
 ## About The Project (WIP)
 
+Hello, Nama saya Yohanes Hubert, Talent Pijar Camp kelas Fullstack & Golang Dev Batch 1
+
 The Blanja e-commerce website project is an online platform designed to make it easier for users to make buying and selling transactions online. This website was developed using React.js and Redux frontend technologies to optimize display performance and efficiency as well as state management. On the backend, this website uses Express.js technology which functions as a server to manage data taken from Cloudinary. Cloudinary functions as an image data store so that it allows users to easily view images of each product being sold.
 
 ### Built With
