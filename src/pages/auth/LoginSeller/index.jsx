@@ -1,33 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/icon.png";
+// import axios from "axios";
+import api from "../../../api/api";
 
 const LoginSeller = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
-  const navigate = useNavigate();
+  const [data, setData] = useState({
+    Email: "",
+    Password: "",
+  });
+
+  // const [token, setToken] = useState("");
+  // const navigate = useNavigate();
+
+  function handleChange(e) {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+    console.log(data);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
-    setToken("token saya");
-    // Simulasi autentikasi, ganti ini dengan logika autentikasi yang sesungguhnya
-    // const isAuthenticated = true;
-    // if (isAuthenticated) {
-    // Simpan token ke local storage
-    localStorage.setItem("token", Date.now());
-    // Arahkan pengguna ke halaman beranda
-    navigate("/home");
-    // } else {
-    // Handle autentikasi gagal
-    // }
+    api
+      .post(`http://localhost:8080/login`, data)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // setToken("token saya");
+    // // Simpan token ke local storage
+    // localStorage.setItem("token", Date.now());
+    // // Arahkan pengguna ke halaman beranda
+    // navigate("/home");
   }
 
-  useEffect(() => {
-    if (token) {
-      navigate("/home");
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (token) {
+  //     navigate("/home");
+  //   }
+  // }, [token]);
 
   return (
     <>
@@ -54,10 +69,10 @@ const LoginSeller = () => {
             <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <input className="form-control" placeholder="Email" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <input className="form-control" placeholder="Email" type="email" name="Email" value={data.Email} onChange={handleChange} />
                 </div>
                 <div className="form-group">
-                  <input name="password" className="form-control" placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <input name="Password" className="form-control" placeholder="Password" type="password" value={data.Password} onChange={handleChange} />
                 </div>
                 <div className="form-group">
                   <Link to="/auth/forgot">

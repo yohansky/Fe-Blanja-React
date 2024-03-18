@@ -23,6 +23,7 @@ const CategoryComp = () => {
           <div className="card-body">
             <div className="row m-1">
               {/* <div className="col-12"> */}
+              
               <img className="img" src={require("../../assets/img/Group 1233.png")} alt="First slide" />
               <img className="img" src={require("../../assets/img/Group 1232.png")} alt="Second slide" />
               <img className="img" src={require("../../assets/img/Group 1231.png")} alt="Third slide" />

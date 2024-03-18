@@ -13,6 +13,9 @@ import Seller from "../../pages/profile/seller";
 import Customer from "../../pages/profile/customer";
 import ReqAuth from "../../components/reqauth";
 import SellingProduct from "../../pages/profile/seller/sellingProduct";
+import Checkout from "../../pages/cart/checkout";
+import Search from "../../pages/search";
+import Category from "../../pages/category";
 // import DetailProduct from "../../pages/detailProduct/[id]";
 // import Cart from "../../pages/cart/[id]";
 // import Profile from "../../pages/profile/[id]";
@@ -43,33 +46,26 @@ const Router = () => {
           <Route path="/auth/RegisterSeller" element={<RegisterSeller />} />
           <Route path="/auth/forgot" element={<Forgot />} />
           <Route path="/cart" element={<Cart />} />
-          <Route
+          <Route path="/cart/checkout" element={<Checkout />} />
+          {/* <Route
             path="/detailProduct/:id"
             element={
               <ReqAuth>
                 <DetailProduct />
               </ReqAuth>
             }
-          />
-          <Route path="*" element={<Page404 />}></Route>
-          {/* <Route path="/product/:id" element={<DetailProduct />} />
-          <Route path="/category/:id" element={<CategoryProduct />} />
-          <Route path="/newproduct/" element={<NewProduct />} />
-          
-          <Route path="/transaction/:id" element={<Transaction />} />
-          <Route path="/profile/:id" element={<Profile />} /> */}
+          /> */}
+          <Route path="/detailProduct/:id" element={<DetailProduct />} />
+          <Route path="*" element={<Page404 />} />
+          <Route path="/search" element={<Search />} />
+          {/* <Route path="/transaction/:id" element={<Transaction />} /> */}
+          <Route path="/category" element={<Category />} />
+          {/* <Route path="/profile/:id" element={<Profile />} /> */}
           {/* seller */}
           <Route path="/profile/seller/" element={<Seller />} />
-          {/* <Route path="/profile/my-product/:id" element={<MyProductSeller />} />
-          <Route path="/profile/update-product/:id" element={<EditProduct />} /> */}
           <Route path="/profile/sellingProduct" element={<SellingProduct />} />
-          {/* <Route path="/profile/order-cancel/:id" element={<OrderCancel />} />
-          <Route path="/profile/my-order/:id" element={<MyOrder />} />
-          <Route path="/profile/edit-seller/:id" element={<EditSeller />} /> */}
           {/* custommer */}
           <Route path="/profile/custommer/" element={<Customer />} />
-          {/* <Route path="/profile/my-order/custommer/:id" element={<MyOrderCustommer />} /> 
-          <Route path="/profile/shipping-address/:id" element={<ShippingAddress />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

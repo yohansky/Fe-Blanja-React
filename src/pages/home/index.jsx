@@ -8,6 +8,7 @@ import Navbar from "../../components/navbar";
 
 const Home = () => {
   const [token, setToken] = useState("");
+
   useEffect(() => {
     setToken(localStorage.getItem("token"));
   }, [token]);

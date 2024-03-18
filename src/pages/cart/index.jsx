@@ -2,6 +2,7 @@ import React from "react";
 import NavbarLogin from "../../components/navbarLogin";
 // import "../../assets/css/style.css";
 import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   return (
@@ -57,9 +58,11 @@ const Cart = () => {
                   <h5>$ 40.0</h5>
                 </div>
                 <div className="mt-4 d-flex justify-content-center">
-                  <button className="btn btn-danger btn-full" style={{ width: "322px" }}>
-                    Primary
-                  </button>
+                  <Link to={"/cart/checkout"}>
+                    <button className="btn btn-danger btn-full" style={{ width: "322px" }}>
+                      Primary
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

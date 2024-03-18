@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       <header id="">
-        <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
           <div className="container">
             <a className="navbar-brand" href="/home">
               <img src={logo} alt="Brand" />
