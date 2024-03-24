@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./stylecard.css";
+import axios from "axios";
 
 const Card = () => {
-  //   const navigate = useNavigate();
-  //   const [products, setProducts] = useState([]);
+  // const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
 
-  //   const displayedProducts = products.slice(0, 12);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/products?page=1&limit=10`)
+      .then((res) => {
+        setProducts(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const displayedProducts = products.slice(0, 12);
 
   return (
     <div className="container">
@@ -21,20 +33,25 @@ const Card = () => {
       </div>
 
       <div className="container">
-        <div className="row d-flex flex-row flex-wrap justify-content-around">
-          <div className="card rounded mb-3">
-            <Link to={"../detailProduct/1"}>
-              <a href="/src/pages/product.html">
-                <img src={require("../../assets/img/gez-xavier.png")} alt="Suit" className="card-img-top img-fluid" />
-                <div className="card-body">
-                  <h5 className="card-title">Men's formal suit - Black & White</h5>
-                  <h5 className="price">$ 40.0</h5>
-                  <p className="text-muted">Zalora Cloth</p>
-                  <img className="img-fluid" src={require("../../assets/img/stars.png")} alt="Rating" />
-                </div>
-              </a>
-            </Link>
-          </div>
+        <div className="row border d-flex flex-row flex-wrap justify-content-around">
+          {/* fetching api */}
+          {displayedProducts.map((item) => (
+            <div className="card rounded mb-3 gap-3 col-md-4 col-sm-12 col-lg-4" key={item.ID}>
+              <Link to={`../detailProduct/${item.ID}`}>
+                <img src={item.Imgurl} alt="Suit" className="card-img-top" style={{ maxHeight: "136px", objectFit: "cover" }} />
+              </Link>
+              <div className="card-body">
+                <Link to={`../detailProduct/${item.ID}`}>
+                  <h5 className="card-title">{item.Name}</h5>
+                </Link>
+                <h5 className="price">{item.Price}</h5>
+                <p className="text-muted">Zalora Cloth</p>
+                <img className="img-fluid" src={require("../../assets/img/stars.png")} alt="Rating" />
+              </div>
+            </div>
+          ))}
+          {/* fetching api */}
+
           <div className="card rounded mb-3">
             <img src={require("../../assets/img/gez-xavier.png")} alt="Suit" className="card-img-top img-fluid" />
             <div className="card-body">

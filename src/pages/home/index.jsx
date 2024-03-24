@@ -4,7 +4,7 @@ import CategoryComp from "../../components/category";
 import Card from "../../components/card";
 import PopularCard from "../../components/popularCard";
 import NavbarLogin from "../../components/navbarLogin";
-import Navbar from "../../components/navbar";
+import Navbarsatu from "../../components/navbar";
 
 const Home = () => {
   const [token, setToken] = useState("");
@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div>
-      {token ? <NavbarLogin /> : <Navbar />}
+      {token ? <NavbarLogin /> : <Navbarsatu />}
       <div className="container" style={{ marginTop: 50 }}>
         <CarouselComp />
         <CategoryComp />
