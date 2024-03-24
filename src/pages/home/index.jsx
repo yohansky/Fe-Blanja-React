@@ -15,12 +15,10 @@ const Home = () => {
   return (
     <div>
       {token ? <NavbarLogin /> : <Navbarsatu />}
-      <div className="container" style={{ marginTop: 50 }}>
-        <CarouselComp />
-        <CategoryComp />
-        <Card />
-        <PopularCard />
-      </div>
+      <CarouselComp />
+      <CategoryComp />
+      <Card />
+      <PopularCard />
     </div>
   );
 };

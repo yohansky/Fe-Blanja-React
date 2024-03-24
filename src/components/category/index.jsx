@@ -1,8 +1,20 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "./stylecate.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CategoryComp = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
   // const [dataCategory, setDataCategory] = useState([]);
 
   // const itemsPerGroup = 5;
@@ -13,21 +25,24 @@ const CategoryComp = () => {
 
   return (
     <>
-      <main id="category">
-        {/* <div className="container"> */}
+      <div className="container">
         <div className="title" style={{ marginTop: 30, marginBottom: 30 }}>
           <h1 style={{ fontWeight: "bold" }}>Category</h1>
           <section style={{ color: "#9B9B9B" }}>What are you currently looking for</section>
         </div>
         <div className="card">
           <div className="card-body">
-            <div className="row m-1">
-              {/* <div className="col-12"> */}
-              <img className="img" src={require("../../assets/img/Group 1233.png")} alt="First slide" />
-              <img className="img" src={require("../../assets/img/Group 1232.png")} alt="Second slide" />
-              <img className="img" src={require("../../assets/img/Group 1231.png")} alt="Third slide" />
-              {/* </div> */}
-            </div>
+            <Slider {...settings}>
+              <div>
+                <img className="img" src={require("../../assets/img/Group 1233.png")} alt="First slide" />
+              </div>
+              <div>
+                <img className="img" src={require("../../assets/img/Group 1232.png")} alt="Second slide" />
+              </div>
+              <div>
+                <img className="img" src={require("../../assets/img/Group 1231.png")} alt="Third slide" />
+              </div>
+            </Slider>
           </div>
         </div>
         {/* <div className="row">
@@ -59,8 +74,7 @@ const CategoryComp = () => {
           </div>
         </div>
       </div> */}
-        {/* </div> */}
-      </main>
+      </div>
     </>
   );
 };

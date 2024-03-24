@@ -1,5 +1,4 @@
 import axios from "axios";
-import "../../assets/css/stylebaru.css";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PopularCard from "../../components/popularCard";
