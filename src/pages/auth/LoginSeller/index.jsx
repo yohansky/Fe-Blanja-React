@@ -5,44 +5,46 @@ import logo from "../../../assets/icon.png";
 import api from "../../../api/api";
 
 const LoginSeller = () => {
-  const [data, setData] = useState({
-    Email: "",
-    Password: "",
-  });
+  // const [data, setData] = useState({
+  //   Email: "",
+  //   Password: "",
+  // });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  // const [token, setToken] = useState("");
-  // const navigate = useNavigate();
+  const [token, setToken] = useState("");
+  const navigate = useNavigate();
 
-  function handleChange(e) {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
-    console.log(data);
-  }
+  // function handleChange(e) {
+  //   setData({
+  //     ...data,
+  //     [e.target.name]: e.target.value,
+  //   });
+  //   console.log(data);
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
-    api
-      .post(`http://localhost:8080/login`, data)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    // setToken("token saya");
-    // // Simpan token ke local storage
-    // localStorage.setItem("token", Date.now());
-    // // Arahkan pengguna ke halaman beranda
-    // navigate("/home");
+    // api
+    //   .post(`http://localhost:8080/login`, data)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    setToken("token saya");
+    // Simpan token ke local storage
+    localStorage.setItem("token", Date.now());
+    // Arahkan pengguna ke halaman beranda
+    navigate("/home");
   }
 
-  // useEffect(() => {
-  //   if (token) {
-  //     navigate("/home");
-  //   }
-  // }, [token]);
+  useEffect(() => {
+    if (token) {
+      navigate("/home");
+    }
+  }, [token]);
 
   return (
     <>
